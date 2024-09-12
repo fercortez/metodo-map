@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrado de Precios</title>
+</head>
+<body>
+    <script>
+        let precios = [200, 230, 345, 400, 150, 500, 600, 180, 460];
+
+        let preciosAumentados = precios.map(precio => precio * 1.15);
+       
+        document.write('Precios Aumentados:');
+        document.write('<p>' + preciosAumentados.join(', ') + '</p>');
+   
+        let preciosIgualesA230 = preciosAumentados.filter(precio => precio === 230);
+        document.write('Precios iguales a 230:');
+        document.write('<p>' + preciosIgualesA230.join(', ') + '</p>');
+       
+        let preciosEntre300Y500 = preciosAumentados.filter(precio => precio >= 300 && precio <= 500);
+        document.write('Precios entre 300 y 500:');
+        document.write('<p>' + preciosEntre300Y500.join(', ') + '</p>');
+    
+        let preciosMayoresA400 = preciosAumentados.filter(precio => precio > 400);
+        document.write('Precios mayores a 400:');
+        document.write('<p>' + preciosMayoresA400.join(', ') + '</p>');
+       
+        let preciosMenoresA200 = preciosAumentados.filter(precio => precio < 200);
+        document.write('Precios menores a 200:');
+        document.write('<p>' + preciosMenoresA200.join(', ') + '</p>');
+       
+        let preciosDistintosA345 = preciosAumentados.filter(precio => precio !== 345);
+        document.write('Precios distintos a 345:');
+        document.write('<p>' + preciosDistintosA345.join(', ') + '</p>');
+
+        let preciosNoSon460 = preciosAumentados.filter(precio => precio !== 460);
+        document.write('Precios que no sean 460:');
+        document.write('<p>' + preciosNoSon460.join(', ') + '</p>');
+        
+        let preciosMayoresA500OMenoresA200 = preciosAumentados.filter(precio => precio > 500 || precio < 200);
+        document.write('Precios mayores a 500 o menores a 200:');
+        document.write('<p>' + preciosMayoresA500OMenoresA200.join(', ') + '</p>');
+    
+        let preciosIgualesA345 = preciosAumentados.filter(precio => precio === 345);
+        document.write('Precios iguales a 345:');
+        document.write('<p>' + preciosIgualesA345.join(', ') + '</p>');
+    </script>
+</body>
+</html>
